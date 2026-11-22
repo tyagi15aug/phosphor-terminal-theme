@@ -1,5 +1,9 @@
 scripts/**
+assets/**
+build/**
+README.md
 .git/**
 .gitignore
 *.vsix
 node_modules/**
+.vscode/**

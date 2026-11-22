@@ -1,8 +1,19 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="Phosphor Terminal: a monochrome green CRT theme for VS Code" width="100%">
+</p>
+
 # Phosphor Terminal
 
 A monochrome green CRT-terminal colour theme for VS Code. Every colour is a shade of
 green, so syntax is told apart by **brightness, italic and bold** rather than hue.
 It matches the "Phosphor terminal" web theme and uses the same palette.
+
+<p align="center">
+  <img src="assets/palette.svg" alt="Phosphor Terminal palette swatches" width="100%">
+</p>
+
+<details>
+<summary>Palette as text (for copying)</summary>
 
 | Role | Colour |
 |---|---|
@@ -17,6 +28,8 @@ It matches the "Phosphor terminal" web theme and uses the same palette.
 | Borders | `#22582f` |
 | Selection / find match | `#1f5c2e` |
 | Syntax greens | `#b6ffc9` `#7dffa0` `#6fef90` `#55d877` `#45b866` `#3fbf62` `#2fa350` |
+
+</details>
 
 ## How syntax is distinguished
 

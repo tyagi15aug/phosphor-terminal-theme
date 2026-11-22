@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 624" width="1200" height="624" role="img" aria-labelledby="pt pd">
+  <title id="pt">Phosphor Terminal palette</title>
+  <desc id="pd">Screen #06170b, Raised #0a2010, Sunken #0e2915, Deepest #04120a, Main #8dffad, Muted #5fd47f, Brightest #d2ffde, Link #a6ffbf, Border #22582f, Selection #1f5c2e, Constants #b6ffc9, Properties #7dffa0, Types #6fef90, Strings #55d877, Operators #45b866, Units #3fbf62, Dim #2fa350</desc>
+  <style>text { font-family: 'Share Tech Mono', 'Noto Sans Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace; }</style>
+  <defs>
+    <filter id="p-glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b2"/>
+      <feMerge><feMergeNode in="b2"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="p-soft" x="-10%" y="-50%" width="120%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="p-scan" width="4" height="3" patternUnits="userSpaceOnUse">
+      <rect y="2" width="4" height="1" fill="#04120a" fill-opacity="0.35"/>
+    </pattern>
+    <radialGradient id="p-vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="62%" stop-color="#04120a" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#04120a" stop-opacity="0.75"/>
+    </radialGradient>
+    <clipPath id="p-screen"><rect width="1200" height="624" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#p-screen)">
+    <rect width="1200" height="624" fill="#06170b"/>
+    <text x="40" y="44" font-size="22" font-weight="700" letter-spacing="2" fill="#d2ffde" filter="url(#p-soft)">PALETTE</text>
+    <text x="40" y="78" font-size="15" letter-spacing="3" fill="#5fd47f">SURFACES</text>
+    <g><rect x="40" y="92" width="148" height="84" rx="8" fill="#06170b" stroke="#22582f"/><text x="52" y="122" font-size="16" font-weight="700" fill="#8dffad">Screen</text><text x="52" y="162" font-size="15" fill="#5fd47f">#06170b</text></g>
+    <g><rect x="200" y="92" width="148" height="84" rx="8" fill="#0a2010" stroke="#22582f"/><text x="212" y="122" font-size="16" font-weight="700" fill="#8dffad">Raised</text><text x="212" y="162" font-size="15" fill="#5fd47f">#0a2010</text></g>
+    <g><rect x="360" y="92" width="148" height="84" rx="8" fill="#0e2915" stroke="#22582f"/><text x="372" y="122" font-size="16" font-weight="700" fill="#8dffad">Sunken</text><text x="372" y="162" font-size="15" fill="#5fd47f">#0e2915</text></g>
+    <g><rect x="520" y="92" width="148" height="84" rx="8" fill="#04120a" stroke="#22582f"/><text x="532" y="122" font-size="16" font-weight="700" fill="#8dffad">Deepest</text><text x="532" y="162" font-size="15" fill="#5fd47f">#04120a</text></g>
+    <text x="40" y="212" font-size="15" letter-spacing="3" fill="#5fd47f">TEXT</text>
+    <g><rect x="40" y="226" width="148" height="84" rx="8" fill="#8dffad" stroke="#22582f"/><text x="52" y="256" font-size="16" font-weight="700" fill="#04120a">Main</text><text x="52" y="296" font-size="15" fill="#0e2915">#8dffad</text></g>
+    <g><rect x="200" y="226" width="148" height="84" rx="8" fill="#5fd47f" stroke="#22582f"/><text x="212" y="256" font-size="16" font-weight="700" fill="#04120a">Muted</text><text x="212" y="296" font-size="15" fill="#0e2915">#5fd47f</text></g>
+    <g><rect x="360" y="226" width="148" height="84" rx="8" fill="#d2ffde" stroke="#22582f"/><text x="372" y="256" font-size="16" font-weight="700" fill="#04120a">Brightest</text><text x="372" y="296" font-size="15" fill="#0e2915">#d2ffde</text></g>
+    <g><rect x="520" y="226" width="148" height="84" rx="8" fill="#a6ffbf" stroke="#22582f"/><text x="532" y="256" font-size="16" font-weight="700" fill="#04120a">Link</text><text x="532" y="296" font-size="15" fill="#0e2915">#a6ffbf</text></g>
+    <text x="40" y="346" font-size="15" letter-spacing="3" fill="#5fd47f">LINES</text>
+    <g><rect x="40" y="360" width="148" height="84" rx="8" fill="#22582f" stroke="#22582f"/><text x="52" y="390" font-size="16" font-weight="700" fill="#8dffad">Border</text><text x="52" y="430" font-size="15" fill="#5fd47f">#22582f</text></g>
+    <g><rect x="200" y="360" width="148" height="84" rx="8" fill="#1f5c2e" stroke="#22582f"/><text x="212" y="390" font-size="16" font-weight="700" fill="#8dffad">Selection</text><text x="212" y="430" font-size="15" fill="#5fd47f">#1f5c2e</text></g>
+    <text x="40" y="480" font-size="15" letter-spacing="3" fill="#5fd47f">SYNTAX</text>
+    <g><rect x="40" y="494" width="148" height="84" rx="8" fill="#b6ffc9" stroke="#22582f"/><text x="52" y="524" font-size="16" font-weight="700" fill="#04120a">Constants</text><text x="52" y="564" font-size="15" fill="#0e2915">#b6ffc9</text></g>
+    <g><rect x="200" y="494" width="148" height="84" rx="8" fill="#7dffa0" stroke="#22582f"/><text x="212" y="524" font-size="16" font-weight="700" fill="#04120a">Properties</text><text x="212" y="564" font-size="15" fill="#0e2915">#7dffa0</text></g>
+    <g><rect x="360" y="494" width="148" height="84" rx="8" fill="#6fef90" stroke="#22582f"/><text x="372" y="524" font-size="16" font-weight="700" fill="#04120a">Types</text><text x="372" y="564" font-size="15" fill="#0e2915">#6fef90</text></g>
+    <g><rect x="520" y="494" width="148" height="84" rx="8" fill="#55d877" stroke="#22582f"/><text x="532" y="524" font-size="16" font-weight="700" fill="#04120a">Strings</text><text x="532" y="564" font-size="15" fill="#0e2915">#55d877</text></g>
+    <g><rect x="680" y="494" width="148" height="84" rx="8" fill="#45b866" stroke="#22582f"/><text x="692" y="524" font-size="16" font-weight="700" fill="#04120a">Operators</text><text x="692" y="564" font-size="15" fill="#0e2915">#45b866</text></g>
+    <g><rect x="840" y="494" width="148" height="84" rx="8" fill="#3fbf62" stroke="#22582f"/><text x="852" y="524" font-size="16" font-weight="700" fill="#04120a">Units</text><text x="852" y="564" font-size="15" fill="#0e2915">#3fbf62</text></g>
+    <g><rect x="1000" y="494" width="148" height="84" rx="8" fill="#2fa350" stroke="#22582f"/><text x="1012" y="524" font-size="16" font-weight="700" fill="#04120a">Dim</text><text x="1012" y="564" font-size="15" fill="#0e2915">#2fa350</text></g>
+    <rect width="1200" height="624" fill="url(#p-scan)" opacity="0.25"/>
+    <rect width="1200" height="624" fill="url(#p-vignette)" opacity="0.4"/>
+  </g>
+  <rect x="1" y="1" width="1198" height="622" rx="17" fill="none" stroke="#22582f" stroke-width="2"/>
+</svg>

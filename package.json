@@ -33,8 +33,8 @@
     ]
   },
   "scripts": {
-    "build": "node scripts/build-theme.mjs",
+    "build": "node scripts/build-theme.mjs && node scripts/build-assets.mjs",
     "check": "node scripts/check-contrast.mjs",
-    "package": "npm run build && npm run check && npx --yes @vscode/vsce package --allow-missing-repository --skip-license"
+    "package": "npm run build && npm run check && node scripts/marketplace-readme.mjs && npx --yes @vscode/vsce package --allow-missing-repository --skip-license --readme-path build/README.marketplace.md"
   }
 }

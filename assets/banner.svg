@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-labelledby="t d">
+  <title id="t">Phosphor Terminal</title>
+  <desc id="d">A monochrome green CRT-terminal colour theme for VS Code.</desc>
+  <style>
+    text { font-family: 'Share Tech Mono', 'Noto Sans Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace; }
+    .cursor { animation: blink 1.1s steps(1, end) infinite; }
+    .flicker { animation: flicker 7s steps(1, end) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes flicker { 0%, 100% { opacity: 1; } 46% { opacity: .9; } 47% { opacity: 1; } 88% { opacity: .93; } 89% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .cursor, .flicker { animation: none; } }
+  </style>
+  <defs>
+    <filter id="b-glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b2"/>
+      <feMerge><feMergeNode in="b2"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="b-soft" x="-10%" y="-50%" width="120%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="b-scan" width="4" height="3" patternUnits="userSpaceOnUse">
+      <rect y="2" width="4" height="1" fill="#04120a" fill-opacity="0.35"/>
+    </pattern>
+    <radialGradient id="b-vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="62%" stop-color="#04120a" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#04120a" stop-opacity="0.75"/>
+    </radialGradient>
+    <clipPath id="b-screen"><rect x="0" y="0" width="1200" height="340" rx="22"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#b-screen)">
+    <rect width="1200" height="340" fill="#06170b"/>
+    <!-- code panel -->
+    <rect x="608" y="96" width="560" height="196" rx="10" fill="#04120a" stroke="#22582f"/>
+    <rect x="608" y="96" width="560" height="30" rx="10" fill="#0a2010"/>
+    <rect x="608" y="116" width="560" height="10" fill="#0a2010"/>
+    <circle cx="630" cy="111" r="5" fill="#22582f"/>
+    <circle cx="648" cy="111" r="5" fill="#22582f"/>
+    <circle cx="666" cy="111" r="5" fill="#22582f"/>
+    <text x="690" y="116" font-size="14" fill="#5fd47f">boot.ts</text>
+
+    <g class="flicker">
+      <g filter="url(#b-glow)">
+        <text x="56" y="138" font-size="60" font-weight="700" letter-spacing="4" fill="#d2ffde">PHOSPHOR</text>
+        <text x="56" y="204" font-size="60" font-weight="700" letter-spacing="4" fill="#8dffad">TERMINAL</text>
+      </g>
+      <g filter="url(#b-soft)">
+        <text x="58" y="254" font-size="21" fill="#5fd47f">&gt; monochrome green CRT theme for VS Code<tspan class="cursor" fill="#d2ffde">&#160;█</tspan></text>
+        <text x="58" y="290" font-size="16" fill="#2fa350">syntax by brightness, italic &amp; bold</text>
+      </g>
+      <g filter="url(#b-soft)">
+      <text x="640" y="150" font-size="19"><tspan fill="#5fd47f" font-style="italic">//&#160;all&#160;green.&#160;brightness&#160;does&#160;the&#160;talking</tspan></text>
+      <text x="640" y="180" font-size="19"><tspan fill="#d2ffde" font-weight="700">export&#160;</tspan><tspan fill="#d2ffde" font-weight="700">async&#160;</tspan><tspan fill="#d2ffde" font-weight="700">function&#160;</tspan><tspan fill="#a6ffbf">boot</tspan><tspan fill="#45b866">(</tspan><tspan fill="#8dffad" font-style="italic">tty</tspan><tspan fill="#45b866">:&#160;</tspan><tspan fill="#6fef90" font-style="italic">Screen</tspan><tspan fill="#45b866">)&#160;{</tspan></text>
+      <text x="640" y="210" font-size="19"><tspan fill="#d2ffde" font-weight="700">&#160;&#160;const&#160;</tspan><tspan fill="#8dffad">msg&#160;</tspan><tspan fill="#45b866">=&#160;</tspan><tspan fill="#55d877">'READY.'</tspan><tspan fill="#45b866">;</tspan></text>
+      <text x="640" y="240" font-size="19"><tspan fill="#d2ffde" font-weight="700">&#160;&#160;await&#160;</tspan><tspan fill="#8dffad">tty</tspan><tspan fill="#45b866">.</tspan><tspan fill="#a6ffbf">write</tspan><tspan fill="#45b866">(</tspan><tspan fill="#8dffad">msg</tspan><tspan fill="#45b866">,&#160;{&#160;</tspan><tspan fill="#7dffa0">baud</tspan><tspan fill="#45b866">:&#160;</tspan><tspan fill="#b6ffc9">9600</tspan><tspan fill="#45b866">&#160;});</tspan></text>
+      <text x="640" y="270" font-size="19"><tspan fill="#45b866">}</tspan></text>
+      </g>
+    </g>
+
+    <!-- CRT overlays -->
+    <rect width="1200" height="340" fill="url(#b-scan)"/>
+    <rect width="1200" height="340" fill="url(#b-vignette)"/>
+  </g>
+  <rect x="1" y="1" width="1198" height="338" rx="21" fill="none" stroke="#22582f" stroke-width="2"/>
+</svg>
