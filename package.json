@@ -1,0 +1,40 @@
+{
+  "name": "phosphor-terminal-theme",
+  "displayName": "Phosphor Terminal",
+  "description": "A monochrome green CRT-terminal colour theme. Every colour is a shade of green; syntax is told apart by brightness, italic and bold.",
+  "version": "1.0.0",
+  "publisher": "phosphor-terminal",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "green",
+    "monochrome",
+    "terminal",
+    "crt",
+    "phosphor"
+  ],
+  "galleryBanner": {
+    "color": "#06170b",
+    "theme": "dark"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Phosphor Terminal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/phosphor-terminal-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node scripts/build-theme.mjs",
+    "check": "node scripts/check-contrast.mjs",
+    "package": "npm run build && npm run check && npx --yes @vscode/vsce package --allow-missing-repository --skip-license"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "workbench.colorTheme": "Phosphor Terminal",
+
+  // Fonts: monospace terminal feel
+  "editor.fontFamily": "'Share Tech Mono', 'Noto Sans Mono', Menlo, monospace",
+  "terminal.integrated.fontFamily": "'Share Tech Mono', 'Noto Sans Mono', Menlo, monospace",
+  "editor.fontSize": 15,
+  "editor.lineHeight": 1.6,
+  "editor.letterSpacing": 0.3,
+  "editor.fontLigatures": false,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.25,
+
+  // Block cursor like an old terminal
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "phase",
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.cursorBlinking": true,
+
+  // Use the theme's bold/italic for syntax
+  "editor.semanticHighlighting.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+
+  // Diffs: with no red available, +/- glyphs make added and removed lines
+  // obvious alongside the brighter (added) and darker (removed) backgrounds
+  "diffEditor.renderIndicators": true,
+  "scm.diffDecorationsGutterPattern": { "added": false, "modified": true },
+
+  // Keep the terminal's greens as designed (the theme already passes 4.5:1)
+  "terminal.integrated.minimumContrastRatio": 1,
+  "terminal.integrated.drawBoldTextInBrightColors": true,
+
+  // Quieter minimap
+  "editor.minimap.renderCharacters": false,
+
+  "vscode_custom_css.imports": [
+     "file:///Users/mcraw/Development/phosphor-terminal-theme/crt/phosphor-crt.css"
+   ]
+}

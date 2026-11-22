@@ -1,0 +1,99 @@
+/*
+ * Phosphor Terminal: optional CRT effects for VS Code.
+ *
+ * NOT part of the theme. Load with a custom CSS loader extension, e.g.
+ * "Custom CSS and JS Loader" (be5invis.vscode-custom-css). See README for the
+ * trade-offs: it patches VS Code's own files, triggers a "corrupt
+ * installation" warning and must be reapplied after every VS Code update.
+ *
+ * Performance rules followed here:
+ *   - only opacity is animated (compositor-only, no layout or paint);
+ *   - no mix-blend-mode, no filters, no background-attachment: fixed;
+ *   - overlays are static gradients on two pseudo-elements with
+ *     pointer-events: none, promoted to their own layer;
+ *   - all motion is removed under prefers-reduced-motion.
+ *
+ * Tweak the custom properties below to taste.
+ */
+
+:root {
+  --phosphor-glow: rgba(141, 255, 173, 0.35);     /* #8dffad */
+  --phosphor-glow-bright: rgba(210, 255, 222, 0.45); /* #d2ffde */
+  --phosphor-scanline: rgba(4, 18, 10, 0.22);     /* #04120a */
+  --phosphor-vignette: rgba(4, 18, 10, 0.55);     /* #04120a */
+}
+
+/* 1. Faint text glow -------------------------------------------------------
+ * Kept to the editor text and terminal rows so the UI chrome stays crisp.
+ * text-shadow is static (never animated), so it costs one paint per change.
+ */
+.monaco-editor .view-lines,
+.monaco-editor .margin-view-overlays .line-numbers.active-line-number {
+  text-shadow: 0 0 2px var(--phosphor-glow), 0 0 6px rgba(141, 255, 173, 0.12);
+}
+
+.monaco-editor .view-lines .mtkb {
+  /* bold tokens (keywords) glow a little brighter */
+  text-shadow: 0 0 3px var(--phosphor-glow-bright), 0 0 8px rgba(210, 255, 222, 0.15);
+}
+
+.xterm .xterm-rows {
+  text-shadow: 0 0 2px var(--phosphor-glow);
+}
+
+/* 2 + 3. Scanlines and vignette -------------------------------------------
+ * Two absolutely positioned overlays on the workbench root. They scroll with
+ * nothing (the workbench itself never scrolls), so no fixed backgrounds are
+ * needed.
+ */
+.monaco-workbench::before,
+.monaco-workbench::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2147483000;
+  will-change: opacity;
+  transform: translateZ(0);
+}
+
+/* 3px repeating scanlines at low opacity */
+.monaco-workbench::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    var(--phosphor-scanline) 2px,
+    var(--phosphor-scanline) 3px
+  );
+  opacity: 0.55;
+  animation: phosphor-flicker 6s steps(1, end) infinite;
+}
+
+/* Edge vignette (curved-screen falloff) */
+.monaco-workbench::after {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 62%,
+    var(--phosphor-vignette) 100%
+  );
+}
+
+/* Very subtle flicker: opacity only, a couple of brief dips per cycle. */
+@keyframes phosphor-flicker {
+  0%   { opacity: 0.55; }
+  47%  { opacity: 0.5; }
+  48%  { opacity: 0.55; }
+  91%  { opacity: 0.48; }
+  92%  { opacity: 0.55; }
+  100% { opacity: 0.55; }
+}
+
+/* Respect reduced motion: no flicker, effects stay static. */
+@media (prefers-reduced-motion: reduce) {
+  .monaco-workbench::before,
+  .monaco-workbench::after {
+    animation: none !important;
+    will-change: auto;
+  }
+}
