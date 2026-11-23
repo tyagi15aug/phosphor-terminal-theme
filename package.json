@@ -3,7 +3,17 @@
   "displayName": "Phosphor Terminal",
   "description": "A monochrome green CRT-terminal colour theme. Every colour is a shade of green; syntax is told apart by brightness, italic and bold.",
   "version": "1.0.0",
-  "publisher": "phosphor-terminal",
+  "publisher": "BananaGames",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tyagi15aug/phosphor-terminal-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tyagi15aug/phosphor-terminal-theme/issues"
+  },
+  "homepage": "https://github.com/tyagi15aug/phosphor-terminal-theme#readme",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -35,6 +45,7 @@
   "scripts": {
     "build": "node scripts/build-theme.mjs && node scripts/build-assets.mjs",
     "check": "node scripts/check-contrast.mjs",
-    "package": "npm run build && npm run check && node scripts/marketplace-readme.mjs && npx --yes @vscode/vsce package --allow-missing-repository --skip-license --readme-path build/README.marketplace.md"
+    "package": "npm run build && npm run check && node scripts/marketplace-readme.mjs && npx --yes @vscode/vsce package --readme-path build/README.marketplace.md",
+    "assets:png": "rsvg-convert -w 1200 assets/banner.svg -o assets/banner.png && rsvg-convert -w 1200 assets/palette.svg -o assets/palette.png && rsvg-convert -w 256 -h 256 assets/icon.svg -o icon.png"
   }
 }
