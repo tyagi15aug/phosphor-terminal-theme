@@ -2,7 +2,7 @@
   "name": "phosphor-terminal-theme",
   "displayName": "Phosphor Terminal",
   "description": "A monochrome green CRT-terminal colour theme. Every colour is a shade of green; syntax is told apart by brightness, italic and bold.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "BananaGames",
   "license": "MIT",
   "icon": "icon.png",

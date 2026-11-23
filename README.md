@@ -167,13 +167,24 @@ It's entirely optional, and the theme looks complete without it.
 ### Setup (if you decide to use it)
 
 1. Install the **Custom CSS and JS Loader** extension (`be5invis.vscode-custom-css`).
-2. Add this to `settings.json` (use the absolute path to the file):
+2. Find where the extension is installed. The stylesheet ships inside it:
+
+   ```bash
+   ls -d ~/.vscode/extensions/*phosphor-terminal-theme*
+   ```
+
+   Then add this to `settings.json`, using the absolute path from that command
+   (replace `<you>` with your username and match the folder name and version it prints):
 
    ```jsonc
    "vscode_custom_css.imports": [
-     "file:///Users/<you>/Development/phosphor-terminal-theme/crt/phosphor-crt.css"
+     "file:///Users/<you>/.vscode/extensions/bananagames.phosphor-terminal-theme-1.0.1/crt/phosphor-crt.css"
    ]
    ```
+
+   If you cloned this repo instead, point at your clone, for example
+   `file:///Users/<you>/Development/phosphor-terminal-theme/crt/phosphor-crt.css`.
+   The path must be absolute, and `~` is not expanded.
 
 3. Command Palette → **Enable Custom CSS and JS**, then restart VS Code.
 
